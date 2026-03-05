@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+               'SF Pro Text', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Intro ── */
+
+.intro {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 120px 24px 60px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.headline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #6e6e73;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ── Performance section ──
+   NO overflow set here. overflow-x:clip + overflow-y:visible
+   gets coerced to overflow-y:auto by spec, which breaks
+   position:sticky on descendants. Apple avoids this by using
+   overflow-y:unset in their enhanced mode. We just skip it. */
+
+.section-performance {
+  position: relative;
+}
+
+/* 700vh = the scroll runway. You scroll through this tall box
+   while the sticky child stays pinned on screen. */
+.chapters-wrapper {
+  height: 700vh;
+}
+
+/* Sticky viewport — stays pinned at top:0 while you scroll
+   through the 700vh parent. All chapters stack in one grid cell. */
+.chapters {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+/* ── Video ── */
+
+.video-container {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  pointer-events: none;
+}
+
+.video-container video {
+  height: 80vh;
+  width: auto;
+}
+
+/* ── Chapters ──
+   All 4 sit in the same grid cell, layered. JS controls opacity/Y. */
+
+.chapter {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chapter-text {
+  max-width: 380px;
+}
+
+.chapter-copy {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #6e6e73;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* ── Gradient text ──
+   Text uses background-clip:text with a tall gradient.
+   Initially shows the dark (top) half. When .active is added,
+   background-position shifts to show the colored (bottom) half.
+   The CSS transition animates the sweep. */
+
+.gradient-text {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.gradient-text span {
+  background:
+    linear-gradient(
+      0deg,
+      var(--gt-color, #1d1d1f) 0%,
+      var(--gt-color, #1d1d1f) 40%,
+      #1d1d1f 60%,
+      #1d1d1f 100%
+    )
+    no-repeat 0% 0% / 100% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position var(--gt-duration, 2s) linear;
+}
+
+.gradient-text.active span {
+  background-position: 0% 100%;
+}
+
+/* ── Bottom content ── */
+
+.bottom-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+  text-align: center;
+}
+
+.bottom-headline {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.bottom-copy {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #6e6e73;
+  line-height: 1.5;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  .chapter {
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .video-container video {
+    height: 55vh;
+  }
+}

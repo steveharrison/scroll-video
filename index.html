@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll-Driven Video — Apple Technique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Intro header -->
+  <section class="intro">
+    <p class="eyebrow">Performance</p>
+    <h1 class="headline">The&nbsp;muscle<br>for&nbsp;your hustle.</h1>
+    <p class="description">
+      The A18 Pro chip helps you run your go-to apps, fly through everyday
+      tasks, tap into your creativity, and play action-packed games.
+    </p>
+  </section>
+
+  <!-- The scroll-driven performance section -->
+  <section class="section-performance">
+    <div class="chapters-wrapper">
+      <div class="chapters">
+
+        <!-- Video is loaded via JS as a blob for guaranteed full buffering -->
+        <div class="video-container">
+          <video id="scrub-video" muted playsinline></video>
+        </div>
+
+        <div class="chapter"
+             data-intro-start="0.1278" data-intro-end="0.1668"
+             data-bridge-start="0.1668" data-bridge-end="0.2468"
+             data-outro-start="0.2468" data-outro-end="0.28">
+          <div class="chapter-text">
+            <h3 class="gradient-text" data-gradient-trigger="0.1668"
+                style="--gt-color: #0a861a; --gt-duration: 1s;">
+              <span>Everyday productivity.</span>
+            </h3>
+            <p class="chapter-copy">
+              Answering email, taking video calls, browsing the web — master
+              your to-do list with MacBook&nbsp;Neo.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter"
+             data-intro-start="0.35" data-intro-end="0.389"
+             data-bridge-start="0.389" data-bridge-end="0.469"
+             data-outro-start="0.469" data-outro-end="0.5022">
+          <div class="chapter-text">
+            <h3 class="gradient-text" data-gradient-trigger="0.389"
+                style="--gt-color: #cc29bc; --gt-duration: 1s;">
+              <span>Conquer your courses.</span>
+            </h3>
+            <p class="chapter-copy">
+              MacBook Neo is perfect for learning, whether you're cramming for
+              finals or creating presentations.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter"
+             data-intro-start="0.5554" data-intro-end="0.5944"
+             data-bridge-start="0.5944" data-bridge-end="0.6744"
+             data-outro-start="0.6744" data-outro-end="0.7076">
+          <div class="chapter-text">
+            <h3 class="gradient-text" data-gradient-trigger="0.5944"
+                style="--gt-color: #2535e0; --gt-duration: 1s;">
+              <span>Make work feel like&nbsp;play.</span>
+            </h3>
+            <p class="chapter-copy">
+              From building spreadsheets to managing payroll, MacBook Neo
+              gets the job done.
+            </p>
+          </div>
+        </div>
+
+        <div class="chapter"
+             data-intro-start="0.773" data-intro-end="0.812"
+             data-bridge-start="0.812" data-bridge-end="0.892"
+             data-outro-start="0.892" data-outro-end="0.9252">
+          <div class="chapter-text">
+            <h3 class="gradient-text" data-gradient-trigger="0.812"
+                style="--gt-color: #882ff4; --gt-duration: 1s;">
+              <span>Amusement perks.</span>
+            </h3>
+            <p class="chapter-copy">
+              With impressive graphics and a vibrant Liquid Retina display,
+              your movies, shows, and games are incredibly detailed.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottom-content">
+      <h3 class="gradient-text bottom-headline" data-gradient-trigger="auto"
+          style="--gt-color: #0a861a; --gt-duration: 1.5s;">
+        <span>Fly through everyday tasks.</span>
+      </h3>
+      <p class="bottom-copy">
+        The A18 Pro chip breezes through your go-to apps and AI activities,
+        putting power and efficiency at your fingertips.
+      </p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
